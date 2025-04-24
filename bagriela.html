@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quer ser minha muie?</title>
+  <style>
+    .message {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      display: none;
+    }
+
+    body {
+      background-color: #ffe6e6;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      overflow: hidden;
+      position: relative;
+    }
+    .corner-img {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 300px; /* Tamanho da imagem */
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+    h1 {
+      color: #ff3366;
+      font-size: 3rem;
+      margin-bottom: 50px;
+    }
+
+    .romantic-emoji {
+      width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      margin-bottom: 40px;
+    }
+
+    #yesBtn, #noBtn {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.2s ease;
+      margin: 20px;
+    }
+
+    #yesBtn {
+      background-color: #7566ff1d;
+      color: white;
+    }
+
+    #noBtn {
+      background-color: #cccccc;
+      color: black;
+      position: absolute;
+    }
+
+    .corner-gif {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 120px;
+      height: 120px;
+    }
+  </style>
+</head>
+<body>
+  <img 
+  src="C:\Users\andre\Downloads\d898e306-5603-4f7a-9d6c-94bf964f3eac.png"
+  class="corner-img" 
+  id="cornerImage"
+  alt="Imagem no canto"
+/>
+
+  <!-- Div principal que será alterada -->
+  <div id="main-content">
+    <h1>Quer ser minha muie?</h1>
+    <img 
+    src="https://us.123rf.com/450wm/yayayoy/yayayoy1609/yayayoy160900006/62764640-encantador-emoticon-segurando-flor-de-rosa-vermelha-entre-os-dentes-na-boca.jpg?ver=6" 
+    style="width: 400px; border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" 
+    alt="Emoji Romântico" />
+    <br>
+    <button id="yesBtn">SIM 🙂‍↕️</button>
+    <button id="noBtn">não 😢</button>
+  </div>
+
+  <!-- Mensagem no canto -->
+  <div id="message" class="message">Yuno logo acima</div>
+
+  <!-- GIF no canto da tela -->
+  <img src="https://static.wikia.nocookie.net/fridaynightfunking/images/3/39/MTCMaxwellIdle.gif/revision/latest/thumbnail/width/360/height/360?cb=20230221134342" 
+  alt="Cute GIF" class="corner-gif" />
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const mainContent = document.getElementById("main-content");
+    const message = document.getElementById("message");
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    });
+
+    yesBtn.addEventListener("click", () => {
+      document.getElementById("cornerImage").style.display = "none"; // some com a imagem do canto
+
+  mainContent.innerHTML = `
+    <h1 style="color:#ff3366; font-size: 4rem;">Então deixa eu te dar um beijão rs</h1>
+    <img 
+      src="https://media.tenor.com/o_5RQarGvJ0AAAAM/kiss.gif" 
+      alt="Beijo" 
+      style="width: 300px; border-radius: 30px; margin-top: 40px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"
+    />
+
+    <!-- Texto no canto esquerdo -->
+    <div style="
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: rgba(255, 102, 163, 0.1);
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-size: 1.4rem;
+      color: #ff3366;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 300px;
+      text-align: left;
+    ">
+      Agora você é oficialmente minha 💘<br>
+      Não tem mais volta 😏
+    </div>
+      `;
+      message.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
